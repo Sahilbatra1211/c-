@@ -1,0 +1,55 @@
+#include<iostream.h>
+#include<conio.h>
+
+struct node 
+{
+	int data;
+	node *next;
+	
+};
+
+node *end=NULL;
+
+
+void push(node** start,int n)
+{	
+	if(end==NULL)
+	{
+	(*start)=new node;
+	(*start)->data=n;
+	(*start)->next=NULL;
+	end=(*start);
+	}
+	else
+	{
+	node *temp=new node;
+	temp->data=n;
+	temp->next=NULL;
+	end->next=temp;
+	end=temp;
+	}
+	
+}
+
+void display(node *start)
+{
+	node *ptr=start;
+	
+	while(ptr!=NULL)
+	{
+		cout<<ptr->data;
+		ptr=ptr->next;
+	}
+}
+
+int main()
+{	
+	node *start;
+	push(&start,1);
+	push(&start,2);
+	push(&start,3);
+	push(&start,4);
+	display(start);
+	
+	
+}

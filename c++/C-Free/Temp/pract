@@ -1,0 +1,31 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+
+struct node{
+	
+	node *next;
+ 	int data;
+};
+
+node *end=NULL;
+node *start=NULL;
+
+void push(int n)
+{
+	if(end==NULL)
+	{
+		node *start=new node;
+		start->data=n;
+		start->next=NULL;
+		end=start;
+	}
+	else{
+		node *ptr=new node;
+		ptr->data=n;
+		ptr->next=NULL;
+		end->next=ptr;
+		end=ptr;
+	}
+	
+}

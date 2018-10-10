@@ -1,0 +1,136 @@
+#include<iostream>
+using namespace std;
+
+struct node 
+{
+	node *next;
+	int data;
+	
+};
+
+node *head=NULL;
+node *temp;
+void insert()
+{	
+	cout<<"enter the data";
+	int a;
+	cin>>a;
+
+	if(head==NULL)
+	{	temp=new node();
+		temp->next=NULL;
+		temp->data=a;
+		head=temp;
+	}
+	else
+	{ node *temp2=new node();
+	  temp2->data=a;
+	  temp2->next=NULL;
+	  temp->next=temp2;
+	  temp=temp2;
+		
+	}
+	
+}
+node *head2=NULL;
+node *temp3;
+void insert2()
+{	
+	cout<<"enter the data";
+	int a;
+	cin>>a;
+
+	if(head2==NULL)
+	{	temp3=new node();
+		temp3->next=NULL;
+		temp3->data=a;
+		head2=temp;
+	}
+	else
+	{ node *temp2=new node();
+	  temp2->data=a;
+	  temp2->next=NULL;
+	  temp3->next=temp2;
+	  temp3=temp2;
+		
+	}
+}
+
+void mergetwolinklist()
+{
+	node *first=head;
+	node *second=head2;
+	node *temp4=first;
+	first=first->next;
+
+	
+	while(first!=NULL && second!=NULL)
+	{
+		if(first->data<second->data)
+		{	temp4->next=first;
+		first=first->next;
+		
+		}
+		else if(second->data<first->data)
+		{
+				temp4->next=second;
+			second=second->next;
+			temp4=temp4->next;
+		}
+	}
+	head=temp4;
+	
+	
+}
+void swapping(int a,int b)
+{
+	node *preva=head;
+	node *prevb=head;
+	
+	while(preva->next->data!=a)
+	{
+		preva=preva->next;
+	}
+	
+	while(prevb->next->data!=b)
+	{
+		prevb=prevb->next;	
+	}
+	
+	node *currenta=preva->next;
+	node *currentb=prevb->next;
+	
+	node *temp2=currenta->next;
+	currenta->next=currentb->next;
+	currentb->next=temp2;
+	preva->next=currentb;
+	prevb->next=currenta;
+		
+}
+
+void display()
+{
+	node *temp2=head;
+	
+	while(temp2!=NULL)
+	{	
+		cout<<temp2->data;
+		temp2=temp2->next;
+	}
+}
+
+int main()
+{
+
+	
+	insert();
+	insert();
+	insert();
+
+	insert2();
+	insert2();
+	insert2();
+	mergetwolinklist();
+	display();
+
+}

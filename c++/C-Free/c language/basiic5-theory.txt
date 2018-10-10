@@ -1,0 +1,57 @@
+theory
+int-2bytes
+	int a;
+	scanf("%d",&a);
+
+float-4 bytes
+	float b;
+	scanf("%f%,&f)
+	
+double 4 bytes
+		more precise than float
+		double c;
+		scanf("%e",&c);
+char 1 byte
+		char c;
+		scanf("%c",&c);
+		
+ascii code- A-Z=65-90
+			a-z=97-122
+			0-10=48-57
+			(c) The following statements would work
+
+int a, b, c, d ;
+a = b = c = 10 ;
+However, the following statement would not work
+int a = b = c = d = 10 ;
+
+Integer and Float Conversions
+In order to effectively develop C programs, it will be necessary to
+understand the rules that are used for the implicit conversion of
+floating point and integer values in C. These are mentioned below.
+Note them carefully.
+(a)An arithmetic operation between an integer and integer
+always yields an integer result.
+An operation between a real and real always yields a real
+result.
+(b)An operation between an integer and real always yields a real
+result. In this operation the integer is first promoted to a real
+and then the operation is performed. Hence the result is real.
+(c)I think a few practical examples shown in the following figure
+would put the issue beyond doubt.
+Operation Result Operation Result
+
+
+
+5 / 2= 2	 2 / 5= 0
+5.0 / 2= 2.5	 2.0 / 5 =0.4
+5 / 2.0= 2.5	 2 / 5.0= 0.4
+5.0 / 2.0= 2.5	 2.0 / 5.0 =0.4
+
+Precedence order
+
+Priority 	Operators 		Description
+1st 		* / % 			multiplication, division, modular division
+2nd 		+ - 			addition, subtraction
+3rd 		= 				assignment  					
+	

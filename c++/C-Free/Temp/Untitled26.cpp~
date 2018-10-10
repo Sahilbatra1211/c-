@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	string s="123456789";
+	cout<<s;
+}
+int winningLotteryTicket(vector <string> tickets) {
+    string s="0123456789";
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+            
+        }
+    }
+    
+   
+}
